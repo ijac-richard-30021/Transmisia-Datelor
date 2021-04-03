@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <title>Users manager</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script type="text/javascript" src="libs/vue.js"></script>
+    <script type="text/javascript" src="libs/axios.js"></script>
+    <script type="text/javascript" src="src/users-service.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <div class="title">Users</div>
+
+    <ul class="user-list">
+        <li>
+            <div class="user-row-header">
+                <div class="user-name">Name</div>
+                <div class="user-city">City</div>
+            </div>
+        </li>
+
+        <li v-for="(user, index) in users">
+            <div class="user-row">
+                <div class="user-name">{{ user.name }}</div>
+                <div class="user-city"><i>{{ user.city }}</i></div>
+                <button class="deleteButton" v-on:click="deleteUser(index)">Delete</button>
+                <button class="modifyButton" v-on:click="modifyUser(index)">Modify</button>
+            </div>
+        </li>
+        <button class="modifyButton" v-on:click="addUser()">Add</button>
+
+        <div class="output" v-if="acceptAddData != '0' ">
+            <div>Add</div>
+            <input class="nameFieldAdd" v-model="NameAdd" placeholder="Name" />
+            <input class="cityFieldAdd" v-model="CityAdd" placeholder="City" />
+            <button class="enterButton" v-on:click="enterAddUser()">Enter</button>
+        </div>
+
+        <div class="output" v-if="acceptModifyData != '0' ">
+            <div>Modify</div>
+            <input class="nameFieldModify" v-model="NameModify" placeholder="Name" />
+            <input class="cityFieldModify" v-model="CityModify" placeholder="City" />
+            <button class="enterButton" v-on:click="enterModifyUser()">Enter</button>
+        </div>
+    </ul>
+
+</div>
+<script src="src/app.js"></script>
+</body>
+</html>
