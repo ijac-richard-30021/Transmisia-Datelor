@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coinye</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <link rel="icon" sizes="32x32" href="websiteIcon.png">
+    <script src="./cye.js"></script>
+    <link rel="stylesheet" href="./main.css">
+
+</head>
+<body ng-app="myApp" ng-controller="appController">
+<form name="conversion" class="form">
+    <h1>This page is showing information regarding CYE.</h1>
+    <span style="color: blue">CYE: <input class="input" ng-model="coinValue"  maxlength="10"> </span><br><br>
+    <span style="color: blue">Convert into</span>
+    <select ng-model="selectedValue" ng-options="value for value in values "></select>
+    <br><br>
+    <span style="color: blue">VAL: <input class="input" maxlength="10" value="{{resultHere}}" readonly></span><br><br>
+    <button ng-click="calculate()">Convert</button><br><br>
+</form>
+
+</body>
+</html>

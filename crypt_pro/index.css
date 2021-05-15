@@ -1,0 +1,20 @@
+body{
+    width: 100%;
+}
+
+.table{
+    width: 100%;
+}
+btc{
+    width: 25%;
+    cursor: pointer;
+}
+
+h1{
+    background-color: #4CAF50;
+    color: red;
+}
+
+.mainHeader{
+    color: red;
+}
